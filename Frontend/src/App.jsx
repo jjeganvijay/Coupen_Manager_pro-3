@@ -15,7 +15,7 @@ const CouponManager = () => {
 
   const fetchCoupons = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/coupons");
+      const res = await axios.get("https://coupen-manager-pro-3.onrender.com");
       setCoupons(res.data);
     } catch (err) {
       console.error("Error fetching coupons", err);
@@ -25,7 +25,7 @@ const CouponManager = () => {
   const createCoupon = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/create-coupon", {
+      await axios.post("https://coupen-manager-pro-3.onrender.com", {
         code,
         discount,
         expirationDate,
@@ -39,7 +39,7 @@ const CouponManager = () => {
 
   const redeemCoupon = async (code) => {
     try {
-      await axios.post("http://localhost:3000/redeem-coupon", { code });
+      await axios.post("https://coupen-manager-pro-3.onrender.com", { code });
       alert("Coupon redeemed successfully!");
       fetchCoupons();
     } catch (err) {
